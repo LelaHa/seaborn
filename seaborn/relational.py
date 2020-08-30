@@ -642,6 +642,7 @@ class _ScatterPlotter(_RelationalPlotter):
         # Draw the scatter plot
         args = np.asarray(x), np.asarray(y), np.asarray(s), np.asarray(c)
         points = ax.scatter(*args, **kws)
+        points.set_cmap(self._hue_map.cmap)
 
         # Update the paths to get different marker shapes.
         # This has to be done here because ax.scatter allows varying sizes
